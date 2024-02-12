@@ -1,0 +1,93 @@
+.container {
+  padding: 16px;
+}
+.mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+.mat-mdc-card-title {
+  font-size: 22px;
+  color: #222222;
+  font-weight: 500;
+}
+.mat-mdc-card-content {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .title {
+    color: #666666;
+    font-size: 12px;
+  }
+  .content {
+    display: flex;
+    gap: 8px;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 500;
+    span {
+      color: #666666;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      .mat-icon {
+        margin-right: 4px;
+        font-size: 20px;
+      }
+    }
+  }
+  .job-roles {
+    display: flex;
+    gap: 8px;
+    span {
+      color: #1f7a54;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+}
+
+.expand-panel {
+  height: 56px;
+  background-color: #dbefff;
+}
+.mat-expansion-panel-header.mat-expanded {
+  height: 56px;
+}
+.time-slot-preference-card {
+  margin-top: 24px;
+  .mat-mdc-card-title {
+    font-size: 16px;
+    color: #222222;
+  }
+  .time-slot-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .mat-radio-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .mat-radio-label-content {
+        font-size: 16px;
+        color: #222222;
+      }
+    }
+  }
+}
+
+.mat-mdc-radio-button {
+  height: 24px;
+}
+.example-section {
+  margin: 12px 0;
+}
+
+.example-margin {
+  margin: 0 12px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}

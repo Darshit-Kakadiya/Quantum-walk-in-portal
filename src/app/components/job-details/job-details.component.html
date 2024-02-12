@@ -1,0 +1,90 @@
+<div *ngFor="let job of job" class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ job.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="date-time-container">
+        <div class="title">Date & Time :</div>
+        <div class="content">
+          {{ job.startDate | date }} to {{ job.endDate | date
+          }}<mat-divider [vertical]="true"></mat-divider
+          ><span><mat-icon>location_on</mat-icon> {{ job.location }}</span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+      <div class="job-roles-container">
+        <div class="title">Job Roles :</div>
+        <div class="job-roles">
+          <span *ngFor="let jobrole of job.jobRoles" class="job-role"
+            ><mat-icon>business_center</mat-icon>{{ jobrole.name }}</span
+          >
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header class="expand-panel">
+        <mat-panel-title>Pre-requisites & Application Process</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        <div class="pre-requisites-container">
+          <div class="title">General Instructions :</div>
+          <div class="content">
+            <span>>{{ job.instructions }}</span>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="pre-requisites-container">
+          <div class="title">Minimum System Requirements :</div>
+          <div class="content">
+            <span>>{{ job.requirements }}</span>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="application-process-container">
+          <div class="title">Application Process :</div>
+          <div class="content">
+            <span>{{ job.process }}</span>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-card class="time-slot-preference-card">
+    <mat-card-header>
+      <mat-card-title>Time Slots & Preferences</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="title">Select a Time Slot :</div>
+      <div class="content">
+        <mat-radio-group
+          class="time-slot-radio-group"
+          [(ngModel)]="selectedTimeSlot"
+        >
+          <mat-radio-button [value]="timeSlot"
+            >9:00 AM to 11:00 AM</mat-radio-button
+          >
+          <mat-radio-button [value]="timeSlot"
+            >1:00 PM to 3:00 PM</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="example-list-section">
+        <ul>
+          <li *ngFor="let jobrole of job.jobRoles">
+            <mat-checkbox>
+              {{ jobrole.name }}
+            </mat-checkbox>
+          </li>
+        </ul>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

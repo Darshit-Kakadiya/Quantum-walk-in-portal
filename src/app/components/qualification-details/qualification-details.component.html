@@ -1,0 +1,258 @@
+<mat-accordion>
+  <mat-expansion-panel
+    (opened)="educationPanelOpenState = true"
+    (closed)="educationPanelOpenState = false"
+  >
+    <mat-expansion-panel-header class="expansion-panel">
+      <mat-panel-title> Educational Qualifications </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="form-container">
+      <div>
+        <mat-form-field>
+          <mat-label>Aggregate Percentage</mat-label>
+          <input
+            matInput
+            placeholder="Aggregate Percentage"
+            name="percentage"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Year of Passing</mat-label>
+          <select matNativeControl required>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+          </select>
+        </mat-form-field>
+      </div>
+      <div class="two-field-container">
+        <mat-form-field>
+          <mat-label>Qualification</mat-label>
+          <select matNativeControl required>
+            <option value="Bachelor in Technology (B.Tech)">
+              Bachelor in Technology (B.Tech)
+            </option>
+          </select> </mat-form-field
+        ><mat-form-field>
+          <mat-label>Stream</mat-label>
+          <select matNativeControl required>
+            <option value="Information Technology">
+              Information Technology
+            </option>
+          </select>
+        </mat-form-field>
+      </div>
+      <div class="two-field-container">
+        <mat-form-field>
+          <mat-label>College</mat-label>
+          <select matNativeControl required>
+            <option value="Pune Institute of Technology (PIT)">
+              Pune Institute of Technology (PIT)
+            </option>
+          </select> </mat-form-field
+        ><mat-form-field>
+          <mat-label>If others, please enter your college name</mat-label>
+          <input
+            matInput
+            placeholder="If others, please enter your college name"
+            name="percentage"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Where is your college located?</mat-label>
+          <input
+            matInput
+            placeholder="Where is your college located?*"
+            name="percentage"
+            required
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-accordion>
+  <mat-expansion-panel
+    (opened)="educationPanelOpenState = true"
+    (closed)="educationPanelOpenState = false"
+  >
+    <mat-expansion-panel-header class="expansion-panel">
+      <mat-panel-title> Professional Qualifications </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="form-container">
+      <div class="experiece">
+        <label>Applicant Type*</label>
+        <p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="Fresher">Fresher</mat-radio-button>
+            <mat-radio-button value="Experienced">Experienced</mat-radio-button>
+          </mat-radio-group>
+        </p>
+      </div>
+      <!-- <div class="two-field-container">
+        <section class="checkbox">
+          <h4>Select All The Technologies You Are Familiar In</h4>
+          <mat-checkbox name="isAvailable">Javascript</mat-checkbox>
+          <mat-checkbox name="isAvailable">Angular JS</mat-checkbox>
+          <mat-checkbox name="isAvailable">React</mat-checkbox>
+          <mat-checkbox name="isAvailable">Node JS</mat-checkbox>
+          <mat-checkbox name="isAvailable">Others</mat-checkbox>
+          <mat-form-field>
+            <mat-label>If others, please mention</mat-label>
+            <input
+              matInput
+              placeholder="If others, please mention"
+              name="percentage"
+            />
+          </mat-form-field>
+        </section>
+        <div class="experiece">
+          <label
+            >Have You Appeared For Any Test By Zeus in the past 12
+            months?*</label
+          >
+          <p>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="Yes">Yes</mat-radio-button>
+              <mat-radio-button value="No">No</mat-radio-button>
+            </mat-radio-group>
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>If Yes, which role did you apply for?</mat-label>
+            <input
+              matInput
+              placeholder="If Yes, which role did you apply for?"
+              name="percentage"
+            />
+          </mat-form-field>
+        </div>
+      </div> -->
+      <div>
+        <div>
+          <mat-form-field>
+            <mat-label>Years of Experience</mat-label>
+            <input
+              matInput
+              placeholder="Years of Experience"
+              name="percentage"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Current CTC (In Rupees)</mat-label>
+            <input
+              matInput
+              placeholder="Years of Experience"
+              name="percentage"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Expected CTC* (In Rupees)</mat-label>
+            <input
+              matInput
+              placeholder="Expected CTC* (In Rupees)"
+              name="percentage"
+            />
+          </mat-form-field>
+        </div>
+        <section class="checkbox">
+          <h4>Select All The Technologies You Expertise In*</h4>
+          <mat-checkbox name="isAvailable">Javascript</mat-checkbox>
+          <mat-checkbox name="isAvailable">Angular JS</mat-checkbox>
+          <mat-checkbox name="isAvailable">React</mat-checkbox>
+          <mat-checkbox name="isAvailable">Node JS</mat-checkbox>
+          <mat-checkbox name="isAvailable">Others</mat-checkbox>
+        </section>
+        <mat-form-field>
+          <mat-label>If others, please mention</mat-label>
+          <input
+            matInput
+            placeholder="If others, please mention"
+            name="percentage"
+          />
+        </mat-form-field>
+        <section class="checkbox">
+          <h4>Select All The Technologies You Are Familiar In</h4>
+          <mat-checkbox name="isAvailable">Javascript</mat-checkbox>
+          <mat-checkbox name="isAvailable">Angular JS</mat-checkbox>
+          <mat-checkbox name="isAvailable">React</mat-checkbox>
+          <mat-checkbox name="isAvailable">Node JS</mat-checkbox>
+          <mat-checkbox name="isAvailable">Others</mat-checkbox>
+        </section>
+        <mat-form-field>
+          <mat-label>If others, please mention</mat-label>
+          <input
+            matInput
+            placeholder="If others, please mention"
+            name="percentage"
+          />
+        </mat-form-field>
+        <div class="experiece">
+          <label>Are you currently on notice period?*</label>
+          <p>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="Yes">Yes</mat-radio-button>
+              <mat-radio-button value="No">No</mat-radio-button>
+            </mat-radio-group>
+          </p>
+        </div>
+        <div class="two-field-container">
+          <mat-form-field>
+            <mat-label>If Yes, when will your notice period end?</mat-label>
+            <input matInput />
+            <mat-datepicker-toggle
+              matIconSuffix
+            ></mat-datepicker-toggle> </mat-form-field
+          ><mat-form-field>
+            <mat-label
+              >How long is your notice period?* (Mention in months)</mat-label
+            >
+            <mat-select required>
+              <mat-option value="2 months">2 months</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="experiece">
+          <label
+            >Have You Appeared For Any Test By Zeus in the past 12
+            months?*</label
+          >
+          <p>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="Yes">Yes</mat-radio-button>
+              <mat-radio-button value="No">No</mat-radio-button>
+            </mat-radio-group>
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>If Yes, which role did you apply for?</mat-label>
+            <input
+              matInput
+              placeholder="If Yes, which role did you apply for?"
+              name="percentage"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div class="button-container">
+  <button mat-raised-button matStepperPrevious>PREVIOUS</button>
+  <button mat-raised-button matStepperNext>NEXT</button>
+</div>

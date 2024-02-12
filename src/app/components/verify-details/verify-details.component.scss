@@ -1,0 +1,110 @@
+.verify-container {
+  margin-bottom: 24px;
+  .verify-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .verify-container-title {
+      color: #222222;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    a {
+      color: #1f7a54;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.verify-content-container {
+  margin-top: 24px;
+  padding: 24px;
+  background-color: white;
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.personal-information {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  .left-container {
+    flex: 1;
+  }
+  .right-container {
+    justify-items: flex-end;
+  }
+}
+
+.verify-content {
+  .verify-content-title {
+    color: #666666;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .verify-content-value {
+    margin-top: 12px;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-disabled label {
+  color: #222222;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.education-verify-panel {
+  margin-top: 16px;
+}
+
+.expansion-panel {
+  height: 56px;
+  background-color: #dbefff;
+  &hover {
+    background-color: #dbefff;
+  }
+}
+
+::ng-deep .mat-expansion-panel-header.mat-expanded {
+  height: 56px !important;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 24px !important;
+}
+
+.two-column-data {
+  display: flex;
+  justify-content: space-between;
+  .verify-content {
+    width: 48%;
+  }
+}
+
+.expanded-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+  gap: 20px;
+}

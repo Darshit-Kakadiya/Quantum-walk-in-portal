@@ -1,0 +1,30 @@
+.center-heading {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.toolbar {
+  height: 40px;
+  background-color: #3c4e62;
+  color: white;
+}
+.mat-stepper-horizontal {
+  margin: 16px;
+  background-color: #eeeeee;
+}
+::ng-deep .mat-horizontal-stepper-header {
+  height: 56px !important;
+}
+::ng-deep .mat-horizontal-stepper-header-container {
+  background-color: #ffffff !important;
+}
+::ng-deep .mat-horizontal-content-container {
+  margin-top: 16px !important;
+  // background-color: #ffffff !important;
+  padding: 0px !important;
+}

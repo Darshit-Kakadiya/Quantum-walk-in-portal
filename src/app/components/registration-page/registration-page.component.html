@@ -1,0 +1,38 @@
+<mat-toolbar class="toolbar">
+  <mat-icon>arrow_back</mat-icon>
+  <span class="center-heading">Create an account</span>
+  <div class="button-container">
+    <button mat-raised-button color="primary">CANCEL</button
+    ><button mat-raised-button color="primary" disabled="true">CANCEL</button>
+  </div>
+</mat-toolbar>
+
+<!-- <mat-stepper #stepper>
+  <mat-step label="Personal Information"
+    ><app-personal-details></app-personal-details>
+  </mat-step>
+  <mat-step label="Qualifications">
+    <app-qualification-details></app-qualification-details>
+  </mat-step>
+  <mat-step label="Review and Proceed">
+    <app-verify-details></app-verify-details
+  ></mat-step>
+</mat-stepper> -->
+
+<mat-horizontal-stepper linear>
+  <mat-step label="Personal Information">
+    <ng-template matStepLabel>Personal Information</ng-template>
+    <!-- Personal Information Content -->
+    <app-personal-details></app-personal-details>
+  </mat-step>
+  <mat-step label="Qualification">
+    <ng-template matStepLabel>Qualification</ng-template>
+    <!-- Qualification Content -->
+    <app-qualification-details></app-qualification-details>
+  </mat-step>
+  <mat-step label="Verify Details">
+    <ng-template matStepLabel>Verify Details</ng-template>
+    <!-- Verify Details Content -->
+    <app-verify-details></app-verify-details>
+  </mat-step>
+</mat-horizontal-stepper>

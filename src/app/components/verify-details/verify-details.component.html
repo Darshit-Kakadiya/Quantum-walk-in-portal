@@ -1,0 +1,195 @@
+<div class="verify-container">
+  <div class="verify-header">
+    <span class="verify-container-title">Personal Information</span>
+    <a href=""><mat-icon>edit</mat-icon>Edit</a>
+  </div>
+  <div class="verify-content-container personal-information">
+    <div class="left-container content-container">
+      <div class="verify-content">
+        <div class="verify-content-title">First Name</div>
+        <div class="verify-content-value">John</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Last Name</div>
+        <div class="verify-content-value">Watson</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Email</div>
+        <div class="verify-content-value">Johnwatson@example.com</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Phone Number</div>
+        <div class="verify-content-value">+91 9876543210</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Enter Portfolio URL (if any)</div>
+        <div class="verify-content-value">www.myportfolio.in</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Preferred Job Roles</div>
+        <div class="verify-content-value">
+          <span>Instructional Designer</span
+          ><span>Software Quality Engineer</span>
+        </div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">
+          If You Are Registering Via A Referral, Please Mention Full Name Of The
+          Employee Who Referred You
+        </div>
+        <div class="verify-content-value">-</div>
+      </div>
+      <div class="verify-content">
+        <mat-checkbox class="example-margin" checked disabled
+          >Send me job related updates via mail</mat-checkbox
+        >
+      </div>
+    </div>
+    <div class="right-container">
+      <mat-icon>person</mat-icon>
+    </div>
+  </div>
+</div>
+<div class="verify-container">
+  <div class="verify-header">
+    <span class="verify-container-title">Qualifications</span>
+    <a href=""><mat-icon>edit</mat-icon>Edit</a>
+  </div>
+  <mat-expansion-panel
+    (opened)="educatioPanelOpenState = true"
+    (closed)="educatioPanelOpenState = false"
+    class="education-verify-panel"
+  >
+    <mat-expansion-panel-header class="expansion-panel">
+      <mat-panel-title> Educational Qualifications </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="expanded-content-container">
+      <div class="verify-content">
+        <div class="verify-content-title">Aggregate Percentage</div>
+        <div class="verify-content-value">50</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Year of Passing</div>
+        <div class="verify-content-value">2020</div>
+      </div>
+      <div class="two-column-data">
+        <div class="verify-content">
+          <div class="verify-content-title">Qualification</div>
+          <div class="verify-content-value">
+            Bachelor in Technology (B.Tech)
+          </div>
+        </div>
+        <div class="verify-content">
+          <div class="verify-content-title">Stream</div>
+          <div class="verify-content-value">Information Technology</div>
+        </div>
+      </div>
+      <div class="two-column-data">
+        <div class="verify-content">
+          <div class="verify-content-title">College</div>
+          <div class="verify-content-value">
+            Pune Institute of Technology (PIT)
+          </div>
+        </div>
+        <div class="verify-content">
+          <div class="verify-content-title">
+            If others, please enter your college name
+          </div>
+          <div class="verify-content-value">-</div>
+        </div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Where is your college located?</div>
+        <div class="verify-content-value">Pune</div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel
+    (opened)="educatioPanelOpenState = true"
+    (closed)="educatioPanelOpenState = false"
+    class="education-verify-panel"
+  >
+    <mat-expansion-panel-header class="expansion-panel">
+      <mat-panel-title> Professional Qualifications </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="expanded-content-container">
+      <div class="verify-content">
+        <div class="verify-content-title">Applicant Type</div>
+        <div class="verify-content-value">Experienced</div>
+      </div>
+    </div>
+    <div class="expanded-content-container">
+      <div class="verify-content">
+        <div class="verify-content-title">Years of Experience</div>
+        <div class="verify-content-value">5</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Current CTC (In Rupees)</div>
+        <div class="verify-content-value">5,00,000</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">Expected CTC (In Rupees)</div>
+        <div class="verify-content-value">6,50,000</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">
+          Select All The Technologies You Expertise In
+        </div>
+        <div class="verify-content-value"><span>Javascript</span></div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">If others, please mention</div>
+        <div class="verify-content-value">-</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">
+          Select All The Technologies You are familiar In
+        </div>
+        <div class="verify-content-value">
+          <span>Angular JS</span><span>React</span>
+        </div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">If others, please mention</div>
+        <div class="verify-content-value">-</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">
+          Are you currently on notice period?
+        </div>
+        <div class="verify-content-value">Yes</div>
+      </div>
+      <div class="two-column-data">
+        <div class="verify-content">
+          <div class="verify-content-title">
+            If Yes, when will your notice period end?
+          </div>
+          <div class="verify-content-value">20-May-2020</div>
+        </div>
+        <div class="verify-content">
+          <div class="verify-content-title">
+            How long is your notice period? (Mention in months)
+          </div>
+          <div class="verify-content-value">2 Months</div>
+        </div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">
+          Have You Appeared For Any Test By Zeus in the past 12 months?
+        </div>
+        <div class="verify-content-value">No</div>
+      </div>
+      <div class="verify-content">
+        <div class="verify-content-title">
+          If Yes, which role did you apply for?
+        </div>
+        <div class="verify-content-value">-</div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>
+
+<div class="button-container">
+  <button mat-raised-button matStepperPrevious>PREVIOUS</button>
+</div>

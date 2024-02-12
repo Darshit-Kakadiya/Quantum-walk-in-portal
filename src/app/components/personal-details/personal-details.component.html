@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="form-container">
+    <form [formGroup]="registrationForm">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          placeholder="First Name"
+          formControlName="firstName"
+          name="firstName"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input
+          matInput
+          placeholder="Last Name"
+          formControlName="lastName"
+          name="lastName"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          formControlName="email"
+          name="email"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <span matPrefix>+91 &nbsp;</span>
+        <input
+          matInput
+          placeholder="Phone Number"
+          formControlName="phoneNumber"
+          name="phone"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter Portfolio URL (if any)</mat-label>
+        <input
+          matInput
+          placeholder="Enter Portfolio URL (if any)"
+          formControlName="portfolioUrl"
+          name="portfolioUrl"
+        />
+      </mat-form-field>
+      <section class="checkbox">
+        <h4>Preferred Job Roles</h4>
+        <mat-checkbox
+          *ngFor="let role of jobRoles"
+          [formControlName]="role.value"
+          >{{ role.label }}</mat-checkbox
+        >
+      </section>
+      <mat-form-field>
+        <mat-label
+          >If You Are Registering Via A Referral, Please Mention Full Name Of
+          The Employee Who Referred You</mat-label
+        >
+        <input
+          matInput
+          placeholder="Enter Referrer's Full Name"
+          formControlName="referredBy"
+          name="referredBy"
+        />
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="photo-upload">
+    <span class="profile-img">
+      <mat-icon class="profile">person</mat-icon>
+    </span>
+    <span>
+      <input type="file" accept="image/*" #fileInput />
+    </span>
+    <span>Max. image size: 5 MB</span>
+  </div>
+</div>
+<div class="button-container">
+  <button mat-raised-button (click)="onSubmit()">Next</button>
+</div>
