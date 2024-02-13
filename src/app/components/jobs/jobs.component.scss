@@ -5,3 +5,67 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.mat-mdc-card-title {
+  font-size: 18px;
+  color: #1f7a54;
+  font-weight: 500;
+}
+.mat-mdc-card-content {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .title {
+    color: #666666;
+    font-size: 12px;
+  }
+  .content {
+    display: flex;
+    gap: 8px;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 500;
+    span {
+      color: #666666;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      .mat-icon {
+        margin-right: 4px;
+        font-size: 20px;
+      }
+    }
+  }
+  .job-roles {
+    display: flex;
+    gap: 8px;
+    span {
+      color: #1f7a54;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+}
+.mat-mdc-card-footer {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+.panel-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .title {
+    color: #666666;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .content {
+    color: #222222;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

@@ -1,31 +1,34 @@
 <div class="container">
   <mat-card *ngFor="let job of jobs">
-    <mat-card-header>
-      <mat-card-title>{{ job.title }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="date-time-container">
-        <div class="title">Date & Time :</div>
-        <div class="content">
-          {{ job.startDate | date }} to {{ job.endDate | date
-          }}<span>{{ job.location }}</span>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ job.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="panel-content-container">
+          <div class="title">Date & Time :</div>
+          <div class="content">
+            {{ job.startDate | date }} to {{ job.endDate | date
+            }}<mat-divider [vertical]="true"></mat-divider
+            ><span><mat-icon>location_on</mat-icon> {{ job.location }}</span>
+          </div>
         </div>
-      </div>
 
-      <mat-divider></mat-divider>
-      <div class="job-roles-container">
-        <div class="title">Job Roles :</div>
-        <div class="job-roles">
-          <span *ngFor="let jobrole of job.jobRoles" class="job-role">{{
-            jobrole.name
-          }}</span>
+        <mat-divider></mat-divider>
+        <div class="panel-content-container">
+          <div class="title">Job Roles :</div>
+          <div class="job-roles">
+            <span *ngFor="let jobrole of job.jobRoles" class="job-role"
+              ><mat-icon>business_center</mat-icon>{{ jobrole.name }}</span
+            >
+          </div>
         </div>
-      </div>
-    </mat-card-content>
-    <mat-card-footer
-      ><a [routerLink]="['/jobs', job.id]"
-        >VIEW MORE DETAILS</a
-      ></mat-card-footer
-    >
+      </mat-card-content>
+      <mat-card-footer>
+        <a [routerLink]="['/jobs', job.id]"
+          ><button mat-raised-button>VIEW MORE DETAILS</button></a
+        >
+      </mat-card-footer>
+    </mat-card>
   </mat-card>
 </div>

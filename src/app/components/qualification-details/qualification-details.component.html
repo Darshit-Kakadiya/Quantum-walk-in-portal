@@ -1,113 +1,130 @@
-<mat-accordion>
-  <mat-expansion-panel
-    (opened)="educationPanelOpenState = true"
-    (closed)="educationPanelOpenState = false"
-  >
-    <mat-expansion-panel-header class="expansion-panel">
-      <mat-panel-title> Educational Qualifications </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="form-container">
-      <div>
-        <mat-form-field>
-          <mat-label>Aggregate Percentage</mat-label>
-          <input
-            matInput
-            placeholder="Aggregate Percentage"
-            name="percentage"
-            required
-          />
-        </mat-form-field>
+<form class="expansion-container">
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="educationPanelOpenState = true"
+      (closed)="educationPanelOpenState = false"
+    >
+      <mat-expansion-panel-header class="expansion-panel">
+        <mat-panel-title> Educational Qualifications </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="form-container">
+        <div>
+          <mat-form-field>
+            <mat-label>Aggregate Percentage</mat-label>
+            <input
+              matInput
+              placeholder="Aggregate Percentage"
+              formControlName="aggregatePercentage"
+              name="percentage"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Year of Passing</mat-label>
+            <mat-select
+              matNativeControl
+              formControlName="yearOfPassing"
+              required
+            >
+              <mat-option value="2020">2020</mat-option>
+              <mat-option value="2019">2019</mat-option>
+              <mat-option value="2018">2018</mat-option>
+              <mat-option value="2017">2017</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="two-field-container">
+          <mat-form-field>
+            <mat-label>Qualification</mat-label>
+            <mat-select
+              formControlName="qualification"
+              matNativeControl
+              required
+            >
+              <mat-option value="Bachelor in Technology (B.Tech)">
+                Bachelor in Technology (B.Tech)
+              </mat-option>
+            </mat-select> </mat-form-field
+          ><mat-form-field>
+            <mat-label>Stream</mat-label>
+            <mat-select matNativeControl formControlName="stream" required>
+              <mat-option value="Information Technology">
+                Information Technology
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="two-field-container">
+          <mat-form-field>
+            <mat-label>College</mat-label>
+            <mat-select matNativeControl formControlName="college" required>
+              <mat-option value="Pune Institute of Technology (PIT)">
+                Pune Institute of Technology (PIT)
+              </mat-option>
+            </mat-select> </mat-form-field
+          ><mat-form-field>
+            <mat-label>If others, please enter your college name</mat-label>
+            <input
+              matInput
+              formControlName="otherCollege"
+              placeholder="If others, please enter your college name"
+              name="percentage"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Where is your college located?</mat-label>
+            <input
+              matInput
+              placeholder="Where is your college located?*"
+              formControlName="collegeLocation"
+              name="percentage"
+              required
+            />
+          </mat-form-field>
+        </div>
       </div>
-      <div>
-        <mat-form-field>
-          <mat-label>Year of Passing</mat-label>
-          <select matNativeControl required>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-          </select>
-        </mat-form-field>
-      </div>
-      <div class="two-field-container">
-        <mat-form-field>
-          <mat-label>Qualification</mat-label>
-          <select matNativeControl required>
-            <option value="Bachelor in Technology (B.Tech)">
-              Bachelor in Technology (B.Tech)
-            </option>
-          </select> </mat-form-field
-        ><mat-form-field>
-          <mat-label>Stream</mat-label>
-          <select matNativeControl required>
-            <option value="Information Technology">
-              Information Technology
-            </option>
-          </select>
-        </mat-form-field>
-      </div>
-      <div class="two-field-container">
-        <mat-form-field>
-          <mat-label>College</mat-label>
-          <select matNativeControl required>
-            <option value="Pune Institute of Technology (PIT)">
-              Pune Institute of Technology (PIT)
-            </option>
-          </select> </mat-form-field
-        ><mat-form-field>
-          <mat-label>If others, please enter your college name</mat-label>
-          <input
-            matInput
-            placeholder="If others, please enter your college name"
-            name="percentage"
-          />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field>
-          <mat-label>Where is your college located?</mat-label>
-          <input
-            matInput
-            placeholder="Where is your college located?*"
-            name="percentage"
-            required
-          />
-        </mat-form-field>
-      </div>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
-<mat-accordion>
-  <mat-expansion-panel
-    (opened)="educationPanelOpenState = true"
-    (closed)="educationPanelOpenState = false"
-  >
-    <mat-expansion-panel-header class="expansion-panel">
-      <mat-panel-title> Professional Qualifications </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="form-container">
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion class="below-panel">
+    <mat-expansion-panel
+      (opened)="educationPanelOpenState = true"
+      (closed)="educationPanelOpenState = false"
+    >
+      <mat-expansion-panel-header class="expansion-panel">
+        <mat-panel-title> Professional Qualifications </mat-panel-title>
+      </mat-expansion-panel-header>
       <div class="experiece">
-        <label>Applicant Type*</label>
+        <label>Applicant Type</label>
         <p>
-          <mat-radio-group aria-label="Select an option">
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="applicantType"
+            required
+            (change)="onApplicantTypeChange($event)"
+          >
             <mat-radio-button value="Fresher">Fresher</mat-radio-button>
             <mat-radio-button value="Experienced">Experienced</mat-radio-button>
           </mat-radio-group>
         </p>
       </div>
-      <!-- <div class="two-field-container">
+      <div *ngIf="experience === 'Fresher'" class="freshers-container">
         <section class="checkbox">
           <h4>Select All The Technologies You Are Familiar In</h4>
-          <mat-checkbox name="isAvailable">Javascript</mat-checkbox>
-          <mat-checkbox name="isAvailable">Angular JS</mat-checkbox>
-          <mat-checkbox name="isAvailable">React</mat-checkbox>
-          <mat-checkbox name="isAvailable">Node JS</mat-checkbox>
-          <mat-checkbox name="isAvailable">Others</mat-checkbox>
+          <mat-checkbox
+            *ngFor="let technology of technologies"
+            [formControlName]="technology.value"
+            >{{ technology.label }}</mat-checkbox
+          >
           <mat-form-field>
             <mat-label>If others, please mention</mat-label>
             <input
               matInput
               placeholder="If others, please mention"
+              formControlName="otherTechnologies"
               name="percentage"
             />
           </mat-form-field>
@@ -118,7 +135,10 @@
             months?*</label
           >
           <p>
-            <mat-radio-group aria-label="Select an option">
+            <mat-radio-group
+              aria-label="Select an option"
+              formControlName="appearedForTest"
+            >
               <mat-radio-button value="Yes">Yes</mat-radio-button>
               <mat-radio-button value="No">No</mat-radio-button>
             </mat-radio-group>
@@ -130,12 +150,13 @@
             <input
               matInput
               placeholder="If Yes, which role did you apply for?"
+              formControlName="appliedRole"
               name="percentage"
             />
           </mat-form-field>
         </div>
-      </div> -->
-      <div>
+      </div>
+      <div *ngIf="experience === 'Experienced'" class="experience-container">
         <div>
           <mat-form-field>
             <mat-label>Years of Experience</mat-label>
@@ -170,11 +191,11 @@
         </div>
         <section class="checkbox">
           <h4>Select All The Technologies You Expertise In*</h4>
-          <mat-checkbox name="isAvailable">Javascript</mat-checkbox>
-          <mat-checkbox name="isAvailable">Angular JS</mat-checkbox>
-          <mat-checkbox name="isAvailable">React</mat-checkbox>
-          <mat-checkbox name="isAvailable">Node JS</mat-checkbox>
-          <mat-checkbox name="isAvailable">Others</mat-checkbox>
+          <mat-checkbox
+            *ngFor="let technology of technologies"
+            [formControlName]="technology.value"
+            >{{ technology.label }}</mat-checkbox
+          >
         </section>
         <mat-form-field>
           <mat-label>If others, please mention</mat-label>
@@ -186,11 +207,11 @@
         </mat-form-field>
         <section class="checkbox">
           <h4>Select All The Technologies You Are Familiar In</h4>
-          <mat-checkbox name="isAvailable">Javascript</mat-checkbox>
-          <mat-checkbox name="isAvailable">Angular JS</mat-checkbox>
-          <mat-checkbox name="isAvailable">React</mat-checkbox>
-          <mat-checkbox name="isAvailable">Node JS</mat-checkbox>
-          <mat-checkbox name="isAvailable">Others</mat-checkbox>
+          <mat-checkbox
+            *ngFor="let technology of Experiencedtechnologies"
+            [formControlName]="technology.value"
+            >{{ technology.label }}</mat-checkbox
+          >
         </section>
         <mat-form-field>
           <mat-label>If others, please mention</mat-label>
@@ -248,10 +269,9 @@
           </mat-form-field>
         </div>
       </div>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
-
+    </mat-expansion-panel>
+  </mat-accordion>
+</form>
 <div class="button-container">
   <button mat-raised-button matStepperPrevious>PREVIOUS</button>
   <button mat-raised-button matStepperNext>NEXT</button>

@@ -9,6 +9,10 @@
   color: #222222;
   font-weight: 500;
 }
+.mat-mdc-card-header {
+  display: flex;
+  justify-content: space-between;
+}
 .mat-mdc-card-content {
   margin-top: 16px;
   display: flex;
@@ -90,4 +94,35 @@
 ul {
   list-style-type: none;
   margin-top: 4px;
+  padding: 0%;
+}
+
+.panel-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .title {
+    color: #666666;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .content {
+    color: #222222;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+::ng-deep .mat-expansion-panel-content > div {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.job-role-description {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }

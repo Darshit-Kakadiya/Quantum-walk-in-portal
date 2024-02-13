@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Jobs } from 'src/app/interfaces/jobs';
+import { AppliedJobService } from 'src/app/services/applied-job.service';
 import { JobsService } from 'src/app/services/jobs.service';
 @Component({
   selector: 'app-job-details',
@@ -11,18 +12,24 @@ export class JobDetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   id: number = -1;
 
-  panelOpenState = false;
+  jobApplied = {
+    id: this.id,
+    timeSlotId: '',
+    jobroleId: [],
+  };
 
-  jobService: JobsService = inject(JobsService);
-  job: Jobs[] = [];
-  selectedTimeSlot: any;
-  timeSlot: any;
-  constructor() {
-    console.log(this.route);
+  panelOpenState = false;
+  job = {};
+  jobRoleIds = [];
+
+  constructor(appliedJobService: AppliedJobService, jobService: JobsService) {
     this.route.params.subscribe((params) => {
       this.id = Number(params['id']);
     });
-
-    this.job = this.jobService.getJobById(this.id);
+    jobService.getJobById(this.id).forEach((job) => {
+      this.job = job;
+      console.log(job);
+    });
   }
+  apply() {}
 }

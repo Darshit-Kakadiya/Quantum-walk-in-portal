@@ -4,16 +4,24 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class RegisterUserService {
-  private registrationData: any[] = [];
+  private PersonalData = {};
+  private QualificationData = {};
 
   constructor() {}
 
-  storeData(data: any): void {
+  storePersonalData(data: any): void {
+    this.PersonalData = data;
     console.log(data);
-    this.registrationData.push(data);
+  }
+  storeQualificationData(data: any): void {
+    console.log(data);
+    this.QualificationData = data;
   }
 
-  getStoredData(): any[] {
-    return this.registrationData;
+  getStoredPesonalData() {
+    return this.PersonalData;
+  }
+  getStoreQualificationData() {
+    return this.QualificationData;
   }
 }

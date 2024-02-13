@@ -14,7 +14,6 @@ export class PersonalDetailsComponent implements OnInit {
     { label: 'Software Developer', value: 'softwareDeveloper' },
     { label: 'UX/UI Designer', value: 'uxUiDesigner' },
     { label: 'Project Manager', value: 'projectManager' },
-    // Add more job roles as needed
   ];
 
   constructor(
@@ -29,7 +28,7 @@ export class PersonalDetailsComponent implements OnInit {
   createForm(): void {
     const formControls: { [key: string]: boolean } = {};
     this.jobRoles.forEach((role) => {
-      formControls[role.value] = false; // Initialize as false
+      formControls[role.value] = false;
     });
 
     this.registrationForm = this.formBuilder.group({
@@ -41,24 +40,20 @@ export class PersonalDetailsComponent implements OnInit {
       portfolioUrl: [''],
       referredBy: [''],
       sendJobUpdates: [false],
-      ...formControls, // Spread form controls for job roles
+      ...formControls,
     });
   }
 
   onSubmit(): void {
     const formData = this.registrationForm.value;
-    // Extract selected job roles from form data
     const selectedJobRoles = this.jobRoles
       .filter((role) => formData[role.value])
       .map((role) => role.label);
 
-    // Add selected job roles to form data
     formData['selectedJobRoles'] = selectedJobRoles;
 
-    // Store or process the form data
-    this.registrationDataService.storeData(formData);
+    this.registrationDataService.storePersonalData(formData);
 
-    // Reset form after submission
     this.registrationForm.reset();
   }
 }
