@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { Jobs } from 'src/app/interfaces/jobs';
 import { JobsService } from 'src/app/services/jobs.service';
 
 @Component({
@@ -9,8 +8,10 @@ import { JobsService } from 'src/app/services/jobs.service';
 })
 export class JobsComponent {
   jobServices: JobsService = inject(JobsService);
-  jobs: Jobs[] = [];
+  jobs: any[] = [];
   constructor() {
-    this.jobs = this.jobServices.getAllJobs();
+    this.jobServices.getAllJobs().subscribe((jobs: any[]) => {
+      this.jobs = jobs;
+    });
   }
 }

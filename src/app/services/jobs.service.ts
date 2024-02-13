@@ -1,122 +1,54 @@
 import { Injectable } from '@angular/core';
-import { Jobs } from '../interfaces/jobs';
+import { jobPosts, jobRoles, jobLocations, timeSlots } from '../data/jobData';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobsService {
-  jobs: Jobs[] = [
-    {
-      title: 'Frontend Developer',
-      id: 1,
-      startDate: new Date('2021-07-01'),
-      endDate: new Date('2021-07-15'),
-      location: 'London',
-      jobRoles: [
-        {
-          id: 1,
-          name: 'Frontend Developer',
-          package: 50000,
-          description: 'Frontend Developer',
-          requirements: 'Frontend Developer',
-        },
-        {
-          id: 2,
-          name: 'Backend Developer',
-          package: 60000,
-          description: 'Backend Developer',
-          requirements: 'Backend Developer',
-        },
-      ],
-      instructions: 'Instructions',
-      requirements: 'Requirements',
-      process: 'Process',
-    },
-    {
-      title: 'Backend Developer',
-      id: 2,
-      startDate: new Date('2021-07-01'),
-      endDate: new Date('2021-07-15'),
-      location: 'Manchester',
-      jobRoles: [
-        {
-          id: 1,
-          name: 'Frontend Developer',
-          package: 50000,
-          description: 'Frontend Developer',
-          requirements: 'Frontend Developer',
-        },
-        {
-          id: 2,
-          name: 'Backend Developer',
-          package: 60000,
-          description: 'Backend Developer',
-          requirements: 'Backend Developer',
-        },
-      ],
-      instructions: 'Instructions',
-      requirements: 'Requirements',
-      process: 'Process',
-    },
-    {
-      title: 'Fullstack Developer',
-      id: 3,
-      startDate: new Date('2021-07-01'),
-      endDate: new Date('2021-07-15'),
-      location: 'Birmingham',
-      jobRoles: [
-        {
-          id: 1,
-          name: 'Frontend Developer',
-          package: 50000,
-          description: 'Frontend Developer',
-          requirements: 'Frontend Developer',
-        },
-        {
-          id: 2,
-          name: 'Backend Developer',
-          package: 60000,
-          description: 'Backend Developer',
-          requirements: 'Backend Developer',
-        },
-      ],
-      instructions: 'Instructions',
-      requirements: 'Requirements',
-      process: 'Process',
-    },
-    {
-      title: 'DevOps Engineer',
-      id: 4,
-      startDate: new Date('2021-07-01'),
-      endDate: new Date('2021-07-15'),
-      location: 'Leeds',
-      jobRoles: [
-        {
-          id: 1,
-          name: 'Frontend Developer',
-          package: 50000,
-          description: 'Frontend Developer',
-          requirements: 'Frontend Developer',
-        },
-        {
-          id: 2,
-          name: 'Backend Developer',
-          package: 60000,
-          description: 'Backend Developer',
-          requirements: 'Backend Developer',
-        },
-      ],
-      instructions: 'Instructions',
-      requirements: 'Requirements',
-      process: 'Process',
-    },
-  ];
+  private jobs: any[] = [];
+  constructor() {
+    jobPosts.forEach((post) => {
+      let jobPost = {
+        id: post.id,
+        title: post.title,
+        startDate: post.startDate,
+        endDate: post.endDate,
+        location: jobLocations.find(
+          (location) => location.id === post.locationId
+        ),
+        jobRoles: jobRoles.filter((role) => post.jobRoleIds.includes(role.id)),
+      };
+      this.jobs.push(jobPost);
+    });
+  }
 
-  getAllJobs() {
-    return this.jobs;
+  getAllJobs(): Observable<any[]> {
+    return of(this.jobs);
   }
-  getJobById(jobId: number) {
-    return this.jobs.filter((job) => job.id === jobId);
+
+  getJobById(id: number): Observable<any[]> {
+    let jobPost;
+    jobPosts.filter((job) => {
+      if (job.id == id) {
+        jobPost = {
+          id: job.id,
+          title: job.title,
+          startDate: job.startDate,
+          endDate: job.endDate,
+          location: jobLocations.find(
+            (location) => location.id === job.locationId
+          ),
+          jobRoles: jobRoles.filter((role) => job.jobRoleIds.includes(role.id)),
+          timeSlots: timeSlots.filter((timeslot) =>
+            job.timeSlotIds.includes(timeslot.id)
+          ),
+          generalInstructions: job.generalInstructions,
+          process: job.process,
+          minimumRequirements: job.minimumRequirements,
+        };
+      }
+    });
+    return of(jobPost) as Observable<any>;
   }
-  constructor() {}
 }

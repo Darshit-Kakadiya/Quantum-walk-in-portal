@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Jobs } from 'src/app/interfaces/jobs';
 import { AppliedJobService } from 'src/app/services/applied-job.service';
 import { JobsService } from 'src/app/services/jobs.service';
 @Component({
@@ -10,26 +9,50 @@ import { JobsService } from 'src/app/services/jobs.service';
 })
 export class JobDetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  id: number = -1;
-
-  jobApplied = {
-    id: this.id,
-    timeSlotId: '',
-    jobroleId: [],
-  };
-
   panelOpenState = false;
-  job = {};
-  jobRoleIds = [];
+  jobService: JobsService = inject(JobsService);
+  appliedJobService: AppliedJobService = inject(AppliedJobService);
 
-  constructor(appliedJobService: AppliedJobService, jobService: JobsService) {
+  selectedJobRoles: number[] = [];
+  selectedTimeSlotId: number | undefined;
+  id: number = -1;
+  job: any;
+  alreadyApplied: any;
+
+  constructor() {
+    this.getJobPost();
+    this.checkIfAlreadyApplied();
+  }
+  getJobPost() {
     this.route.params.subscribe((params) => {
-      this.id = Number(params['id']);
+      this.id = params['id'];
     });
-    jobService.getJobById(this.id).forEach((job) => {
-      this.job = job;
-      console.log(job);
+    this.jobService.getJobById(this.id).subscribe((jobPost: any) => {
+      this.job = jobPost;
     });
   }
-  apply() {}
+  checkIfAlreadyApplied() {
+    this.alreadyApplied = this.appliedJobService.getApplicationDetails(this.id);
+  }
+  onJobRoleSelectionChange(event: any, jobRoleId: number): void {
+    if (event.checked) {
+      this.selectedJobRoles.push(jobRoleId);
+    } else {
+      this.selectedJobRoles = this.selectedJobRoles.filter(
+        (id: number) => id !== jobRoleId
+      );
+    }
+  }
+
+  apply() {
+    if (this.selectedTimeSlotId && this.selectedJobRoles.length > 0) {
+      this.appliedJobService.applyJob({
+        id: this.job.id,
+        jobRoles: this.selectedJobRoles,
+        timeSlotId: this.selectedTimeSlotId,
+      });
+    } else {
+      console.log('Please select time slot and job role');
+    }
+  }
 }

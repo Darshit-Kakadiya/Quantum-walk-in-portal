@@ -10,7 +10,9 @@
           <div class="content">
             {{ job.startDate | date }} to {{ job.endDate | date
             }}<mat-divider [vertical]="true"></mat-divider
-            ><span><mat-icon>location_on</mat-icon> {{ job.location }}</span>
+            ><span
+              ><mat-icon>location_on</mat-icon> {{ job.location.city }}</span
+            >
           </div>
         </div>
 

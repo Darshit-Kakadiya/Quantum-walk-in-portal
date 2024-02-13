@@ -4,15 +4,20 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AppliedJobService {
-  jobsApplied: any[] = [];
+  jobsApplied: any[] = [
+    {
+      id: 1,
+      jobRoles: [1, 2],
+      timeSlotId: 2,
+    },
+  ];
 
   constructor() {}
 
   applyJob(job: any) {
     this.jobsApplied.push(job);
-    console.log(this.jobsApplied);
   }
-  getAppliedJobs() {
-    return this.jobsApplied;
+  getApplicationDetails(jobId: number) {
+    return this.jobsApplied.find((job) => job.id == jobId);
   }
 }
